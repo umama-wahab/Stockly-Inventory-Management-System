@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.stockly.ui.Icon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="page-scroll" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stockly.controller.ReportsController">
+    <VBox styleClass="page" spacing="20">
+
+        <GridPane hgap="16">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50"/>
+                <ColumnConstraints percentWidth="50"/>
+            </columnConstraints>
+
+            <VBox styleClass="card,stat-card" spacing="12" maxWidth="Infinity" GridPane.columnIndex="0">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Total products" styleClass="stat-label"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <StackPane styleClass="icon-bubble,bubble-emerald"><Icon name="inventory" size="20" styleClass="icon-emerald"/></StackPane>
+                </HBox>
+                <Label fx:id="totalProductsValue" text="0" styleClass="stat-value"/>
+                <Label text="Different items in your catalogue" styleClass="stat-hint"/>
+            </VBox>
+
+            <VBox styleClass="card,stat-card" spacing="12" maxWidth="Infinity" GridPane.columnIndex="1">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Total units" styleClass="stat-label"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <StackPane styleClass="icon-bubble,bubble-navy"><Icon name="units" size="20" styleClass="icon-navy"/></StackPane>
+                </HBox>
+                <Label fx:id="totalUnitsValue" text="0" styleClass="stat-value"/>
+                <Label text="Units on your shelves right now" styleClass="stat-hint"/>
+            </VBox>
+        </GridPane>
+
+        <VBox styleClass="card" spacing="18" maxWidth="Infinity">
+            <VBox spacing="2">
+                <Label text="Stock breakdown" styleClass="card-title"/>
+                <Label text="How many products fall into each stock level" styleClass="card-subtitle"/>
+            </VBox>
+
+            <HBox fx:id="stockBar" styleClass="stock-bar" minHeight="14" prefHeight="14" maxHeight="14">
+                <Region fx:id="barInStock" styleClass="bar-segment,bar-emerald"/>
+                <Region fx:id="barLowStock" styleClass="bar-segment,bar-amber"/>
+                <Region fx:id="barOutOfStock" styleClass="bar-segment,bar-red"/>
+            </HBox>
+
+            <VBox spacing="0">
+                <HBox styleClass="report-row" alignment="CENTER_LEFT" spacing="12">
+                    <Region styleClass="legend-dot,legend-emerald"/>
+                    <Label text="In-stock products" styleClass="report-label" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                    <Label fx:id="inStockShare" text="0%" styleClass="report-share" minWidth="56" alignment="CENTER_RIGHT"/>
+                    <Label fx:id="inStockValue" text="0" styleClass="report-value" minWidth="64" alignment="CENTER_RIGHT"/>
+                </HBox>
+                <HBox styleClass="report-row" alignment="CENTER_LEFT" spacing="12">
+                    <Region styleClass="legend-dot,legend-amber"/>
+                    <Label text="Low-stock products" styleClass="report-label" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                    <Label fx:id="lowStockShare" text="0%" styleClass="report-share" minWidth="56" alignment="CENTER_RIGHT"/>
+                    <Label fx:id="lowStockValue" text="0" styleClass="report-value" minWidth="64" alignment="CENTER_RIGHT"/>
+                </HBox>
+                <HBox styleClass="report-row,report-row-last" alignment="CENTER_LEFT" spacing="12">
+                    <Region styleClass="legend-dot,legend-red"/>
+                    <Label text="Out-of-stock products" styleClass="report-label" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                    <Label fx:id="outOfStockShare" text="0%" styleClass="report-share" minWidth="56" alignment="CENTER_RIGHT"/>
+                    <Label fx:id="outOfStockValue" text="0" styleClass="report-value" minWidth="64" alignment="CENTER_RIGHT"/>
+                </HBox>
+            </VBox>
+        </VBox>
+
+        <Label fx:id="updatedLabel" styleClass="muted-message"/>
+    </VBox>
+</ScrollPane>

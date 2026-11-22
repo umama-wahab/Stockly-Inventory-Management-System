@@ -1,0 +1,25 @@
+# Build output
+target/
+out/
+*.class
+*.jar
+dependency-reduced-pom.xml
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+nbproject/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+
+# NOTE: docs/javadoc/ is intentionally NOT ignored - it is part of the submission.

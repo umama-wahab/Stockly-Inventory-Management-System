@@ -1,0 +1,6 @@
+com.stockly
+com.stockly.controller
+com.stockly.model
+com.stockly.persistence
+com.stockly.service
+com.stockly.ui

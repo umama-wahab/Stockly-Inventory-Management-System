@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.stockly"},{"l":"com.stockly.controller"},{"l":"com.stockly.model"},{"l":"com.stockly.persistence"},{"l":"com.stockly.service"},{"l":"com.stockly.ui"}];updateSearchResults();
