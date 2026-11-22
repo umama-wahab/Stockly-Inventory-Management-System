@@ -69,7 +69,7 @@ duplicate name, empty quantity, letters/decimals, negative numbers, quantity > 1
 | `ProductDialogController` | add/edit dialog |
 | `Icon`, `StatusBadge`, `EmptyState`, `ConfirmDialog` | small reusable UI building blocks |
 
-## OOP concepts you can point to in the viva
+## OOP concepts 
 
 - **Encapsulation** - `Product` fields are private; properties are read-only; changes only through validated setters.
 - **Abstraction / interfaces** - `InventoryRepository`, `AppShell`.
